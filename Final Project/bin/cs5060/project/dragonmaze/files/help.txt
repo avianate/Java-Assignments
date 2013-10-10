@@ -1,0 +1,21 @@
+
+Sir Herold the Hero is stuck in an evil dragon's maze. Help Sir Herold the Hero find 
+his way through the labyrinth to get the key and escape. Look for the energy drink 
+to help Sir Herold the Hero double his pace!
+
+
+HOW TO PLAY:
+
+Move the Hero 'H' to find the key 'K' to unlock the door 'E' and escape.
+Pick up an energy drink 'e' to move the hero twice per turn for 10 turns.
+
+press 'l' to move LEFT
+press 'r' to move RIGHT
+press 'u' to move UP
+press 'd' to move DOWN
+press 'w' to SKIP A TURN
+
+press 'q' to QUIT
+press 'h' for HELP
+
+
