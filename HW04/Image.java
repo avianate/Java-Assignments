@@ -66,9 +66,15 @@ public class Image {
 
 
 
-	private boolean parse() throws IOException {
+	private boolean parse()  {
 
-		String ppmLine = reader.readLine();	
+		String ppmLine;
+		
+		try {
+			ppmLine = reader.readLine();
+		} catch (IOException e) {
+			return false;
+		}	
 		
 		int pixelIndex = 0;
 				
@@ -87,9 +93,13 @@ public class Image {
 				pixelIndex++;
 			}
 
-			ppmLine = reader.readLine();
-		}
+			try {
+				ppmLine = reader.readLine();
+			} catch (IOException e) {
+				return false;
+			}
 
+		}
 		return true;
 	}
 }

@@ -1,7 +1,6 @@
 // Nate Graham	A00305171
 
 
-
 import java.util.ArrayDeque;
 
 
@@ -72,7 +71,7 @@ public class MyMinStack<T extends Comparable<T>> implements MinStack<T> {
 	public T getMin() {
 		
 		if (isEmpty())
-				minimum = null;
+			return null;
 
 		return minimum;
 	}
@@ -81,16 +80,20 @@ public class MyMinStack<T extends Comparable<T>> implements MinStack<T> {
 
 	public String toString()
 	{
+		try {
+			if (isEmpty())
+				throw new EmptyStackException();
+			}
+			catch (EmptyStackException e)
+			{
+				System.out.println(e);
+			//	e.getStackTrace();
+				return "";
+				
+			}
 		return this.toString();
 	}
 
-	
-	
-//	private int compareTo(T element, T minimum)
-//	{
-//		int comp = minimum.compareTo(element);
-//		return (comp != 0 ? comp : element.compareTo(element));
-//	}
 
 
 
@@ -117,6 +120,42 @@ public class MyMinStack<T extends Comparable<T>> implements MinStack<T> {
 
 		return minimum;
 
+	}
+	
+	public static void main(String[] args)
+	{
+		MyMinStack<PersonName> stack = new MyMinStack<PersonName>();
+		
+		PersonName a = new PersonName("Aa", "Aa");
+		PersonName b = new PersonName("Bb", "Bb");
+		PersonName c = new PersonName("Cc", "Cc");
+		PersonName d = new PersonName("Dd", "Dd");
+		
+		stack.push(c);
+		stack.push(a);
+		stack.push(d);
+		stack.push(b);
+	
+		
+		System.out.println(stack.getMin());
+		stack.pop();
+		System.out.println(stack.getMin());
+		stack.pop();
+		System.out.println(stack.getMin());
+		stack.pop();
+		System.out.println(stack.getMin());
+		stack.pop();
+		System.out.println(stack.getMin());
+		
+		System.out.println(stack.isEmpty());
+		System.out.println(stack.getSize());
+		
+		stack.pop();
+		System.out.println(stack.getMin());
+		System.out.println(stack);
+		
+		
+		
 	}
 	
 }

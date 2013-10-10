@@ -4,11 +4,9 @@
 
 import java.io.*;
 
-public class Ppm2Ascii {
+public class Ppm2Ascii extends AsciiImage {
 
-	static String inputFile = null;
-	static String threshold = null;
-	static String ppmVersion = null, ppmLine = null;
+	static String inputFile = null, threshold = null;
 	String[] headerInfo = null;
 	static int width, height, widthIndex = 0, heightIndex = 0;
 
@@ -24,7 +22,7 @@ public class Ppm2Ascii {
 
 
 	//************************************************************************************
-	//			MAIN PROGRAM
+	//				MAIN PROGRAM
 	//************************************************************************************	
 
 
@@ -61,7 +59,7 @@ public class Ppm2Ascii {
 		}
 
 
-		// load file then display (conversion is automatically handled in the AsciiImage load method)
+		// load file then get ppm header info then convert
 		if (inputFile != null)
 		{
 			if (myImage.loadFile(inputFile))
@@ -69,6 +67,9 @@ public class Ppm2Ascii {
 				myAsciiImage.load(myImage, threshold);
 				myAsciiImage.display();
 			}
+			else
+				System.out.println("Error reading file. Check file type is \"P3\"");
+				
 		}
 		else
 			printHelpAndExit();

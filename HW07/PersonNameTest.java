@@ -1,7 +1,6 @@
 // Nate Graham	A00305171
 
 
-
 import static org.junit.Assert.*;
 import org.junit.Test;
 
